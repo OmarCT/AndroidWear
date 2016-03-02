@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MiAppWeareable</string>
+    <string name="texto_input">Escribe tu texto</string>
+    <string name="texto_boton">Mandar notificación</string>
+    <string name="mensaje_generico">Sin mensaje</string>
+    <string name="titulo_notificacion">Mensaje</string>
+</resources>
