@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.WearableExtender wearNotification = new NotificationCompat.WearableExtender();
 
         Notification notificacion = new NotificationCompat.Builder(getApplication())
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.hp_mail_icon)
                 .setContentTitle(getResources().getString(R.string.titulo_notificacion))
                 .setContentText(mensaje)
                 .extend(wearNotification)
