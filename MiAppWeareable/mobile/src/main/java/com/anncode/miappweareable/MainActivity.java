@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    int ID_NOTIFICATION = 1;
     EditText edtTextoNotificacion;
     public void enviarNotificacion(View v){
         //Codigo para enviar una notificacion al Watch
@@ -25,15 +26,16 @@ public class MainActivity extends AppCompatActivity {
         if (mensaje.isEmpty())
                 mensaje = getResources().getString(R.string.mensaje_generico);
 
+        NotificationCompat.WearableExtender wearNotification = new NotificationCompat.WearableExtender();
+
         Notification notificacion = new NotificationCompat.Builder(getApplication())
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(getResources().getString(R.string.titulo_notificacion))
                 .setContentText(mensaje)
-                .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
+                .extend(wearNotification)
                 .build();
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplication());
-        notificationManagerCompat.notify(1, notificacion);
-
+        notificationManagerCompat.notify(ID_NOTIFICATION, notificacion);
     }
 }
