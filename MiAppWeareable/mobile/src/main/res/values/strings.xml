@@ -2,6 +2,10 @@
     <string name="app_name">MiAppWeareable</string>
     <string name="texto_input">Escribe tu texto</string>
     <string name="texto_boton">Mandar notificación</string>
+    <string name="texto_input_texto_completo">Escribe tu texto largo</string>
+    <string name="texto_boton_texto_completo">Mandar notificación texto largo</string>
     <string name="mensaje_generico">Sin mensaje</string>
     <string name="titulo_notificacion">Mensaje</string>
+    <string name="titulo_texto_largo">Titulo Texto Largo</string>
+    <string name="resumen_texto_largo">Mi texto largo</string>
 </resources>

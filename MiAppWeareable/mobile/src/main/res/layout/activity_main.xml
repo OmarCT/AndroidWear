@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.anncode.miappweareable.MainActivity">
 
     <EditText
@@ -20,9 +21,28 @@
         android:id="@+id/btnNotificacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtTextoNotificacion"
         android:text="@string/texto_boton"
         android:onClick="enviarNotificacion"
         />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/edtTextoNotificacionTextoCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/texto_input_texto_completo"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        />
+
+    <Button
+        android:id="@+id/btnNotificacionTextoCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_boton_texto_completo"
+        android:onClick="enviarNotificacionTextoLargo"
+        />
+
+
+
+</LinearLayout>

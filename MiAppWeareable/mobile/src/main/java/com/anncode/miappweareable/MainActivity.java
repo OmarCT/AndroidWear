@@ -38,4 +38,32 @@ public class MainActivity extends AppCompatActivity {
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplication());
         notificationManagerCompat.notify(ID_NOTIFICATION, notificacion);
     }
+
+    int ID_NOTIFICATION_TEXTO_LARGO = 2;
+    EditText edtTextoNotificacionTextoCompleto;
+    public void enviarNotificacionTextoLargo(View v){
+        //Codigo para enviar una notificacion al Watch
+        edtTextoNotificacionTextoCompleto = (EditText) findViewById(R.id.edtTextoNotificacionTextoCompleto);
+        String mensaje = edtTextoNotificacionTextoCompleto.getText().toString();
+
+        if (mensaje.isEmpty())
+            mensaje = getResources().getString(R.string.mensaje_generico);
+
+        NotificationCompat.WearableExtender wearNotification = new NotificationCompat.WearableExtender();
+
+        NotificationCompat.Style estilo = new NotificationCompat.BigTextStyle()
+                .setBigContentTitle(getResources().getString(R.string.titulo_texto_largo))
+                .setSummaryText(getResources().getString(R.string.resumen_texto_largo))
+                .bigText(mensaje);
+
+        Notification notificacion = new NotificationCompat.Builder(getApplication())
+                .setSmallIcon(R.drawable.hp_mail_icon)
+                .setContentTitle(getResources().getString(R.string.titulo_texto_largo))
+                .setContentText(mensaje)
+                .extend(wearNotification)
+                .build();
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplication());
+        notificationManagerCompat.notify(ID_NOTIFICATION_TEXTO_LARGO, notificacion);
+    }
 }
