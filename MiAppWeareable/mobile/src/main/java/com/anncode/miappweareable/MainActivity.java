@@ -1,6 +1,7 @@
 package com.anncode.miappweareable;
 
 import android.app.Notification;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -60,10 +61,39 @@ public class MainActivity extends AppCompatActivity {
                 .setSmallIcon(R.drawable.hp_mail_icon)
                 .setContentTitle(getResources().getString(R.string.titulo_texto_largo))
                 .setContentText(mensaje)
-                .extend(wearNotification)
+                .setStyle(estilo)
                 .build();
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplication());
         notificationManagerCompat.notify(ID_NOTIFICATION_TEXTO_LARGO, notificacion);
+    }
+
+    int ID_NOTIFICATION_IMAGEN_FONDO = 3;
+
+    public void enviarNotificacionImagenFondo(View v){
+        //Codigo para enviar una notificacion al Watch
+        edtTextoNotificacion = (EditText) findViewById(R.id.edtTextoNotificacion);
+        String mensaje = edtTextoNotificacion.getText().toString();
+
+        if (mensaje.isEmpty())
+            mensaje = getResources().getString(R.string.mensaje_generico);
+
+        NotificationCompat.WearableExtender wearNotification = new NotificationCompat.WearableExtender();
+
+        NotificationCompat.Style estilo = new NotificationCompat.BigPictureStyle()
+                .setBigContentTitle(getResources().getString(R.string.titulo_texto_largo))
+                .setSummaryText(getResources().getString(R.string.resumen_texto_largo))
+                .bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.imagen_fondo_android_wear));
+
+        Notification notificacion = new NotificationCompat.Builder(getApplication())
+                .setSmallIcon(R.drawable.hp_mail_icon)
+                .setContentTitle(getResources().getString(R.string.titulo_texto_largo))
+                .setContentText(mensaje)
+                .extend(wearNotification)
+                .setStyle(estilo)
+                .build();
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplication());
+        notificationManagerCompat.notify(ID_NOTIFICATION_IMAGEN_FONDO, notificacion);
     }
 }

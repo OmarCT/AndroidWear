@@ -43,6 +43,15 @@
         android:onClick="enviarNotificacionTextoLargo"
         />
 
+    <Button
+        android:id="@+id/btnNotificacionImagenFondo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_boton_imagen_fondo"
+        android:onClick="enviarNotificacionImagenFondo"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        />
+
 
 
 </LinearLayout>

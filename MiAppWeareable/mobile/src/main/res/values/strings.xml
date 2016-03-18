@@ -4,6 +4,7 @@
     <string name="texto_boton">Mandar notificación</string>
     <string name="texto_input_texto_completo">Escribe tu texto largo</string>
     <string name="texto_boton_texto_completo">Mandar notificación texto largo</string>
+    <string name="texto_boton_imagen_fondo">Mandar notificación imagen de fondo</string>
     <string name="mensaje_generico">Sin mensaje</string>
     <string name="titulo_notificacion">Mensaje</string>
     <string name="titulo_texto_largo">Titulo Texto Largo</string>
